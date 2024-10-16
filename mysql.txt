@@ -19,6 +19,7 @@ C:\> "C:\MySQL\bin\mysql" test
 
 Go the services.msc and check weather the services is running. If not run the services for mysql
 
+=====================================================================================================================
 
 https://stackoverflow.com/questions/17426052/error-2003-hy000-cant-connect-to-mysql-server-on-localhost-10061
 
