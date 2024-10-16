@@ -1,0 +1,95 @@
+https://www.oracle.com/mysql/technologies/mysql-enterprise-edition-downloads.html#windows
+
+https://dev.mysql.com/downloads/installer/
+
+mysql -u root
+mysql -u root -p
+
+
+D:\Software\mysql-enterprise-9.0.1_winx64_bundle\mysql-commercial-9.0.1-winx64\bin>mysql -u root -p
+Enter password: ****
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+
+
+C:\> "C:\MySQL\bin\mysqlshow" 
+
+C:\> "C:\MySQL\bin\mysql" test
+
+
+https://stackoverflow.com/questions/17426052/error-2003-hy000-cant-connect-to-mysql-server-on-localhost-10061
+
+
+
+C:\WINDOWS\system32>mysql -u root -p
+Enter password:
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+
+Firewall was disabled and the issue get resolved. 
+
+
+
+https://stackoverflow.com/questions/2995054/access-denied-for-user-rootlocalhost-using-passwordno
+
+
+
+
+
+
+java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:589)
+	at java.base/sun.nio.ch.Net.connect(Net.java:578)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:760)
+	
+//            Connection con=DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:4880/sonoo","root","");
+
+                        Connection con=DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/sonoo","root","root");
+					
+					port no was changed from  4880 to 3306
+	
+java.sql.SQLException: Access denied for user 'root'@'localhost' (using password: NO)
+password set to root
+
+
+java.sql.SQLException: Unknown initial character set index '255' received from server. Initial client character set can be forced via the 'characterEncoding' property.
+
+
+
+//                        Connection con=DriverManager.getConnection(
+//                    "jdbc:mysql://localhost:3306/sonoo","root","root");
+
+            Connection con=DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/sonoo?characterEncoding=utf8","root","root");
+            System.out.println(" hello after database connection");
+			
+			
+			
+ the following string was added in the string. 
+ 
+ characterEncoding=utf8"
+ 
+ 
+ 
+ Insert statement in mysql 
+ 
+create database sonoo;  
+use sonoo;  
+create table emp(id int(10),name varchar(40),age int(3));  
+ 
+ INSERT INTO emp (id, name, age)
+VALUES (1, 'krishna', 30);
+
+ INSERT INTO emp (id, name, age)
+VALUES (2, 'krishna2', 31);
+
+ INSERT INTO emp (id, name, age)
+VALUES (3, 'krishna3', 32);
+
+commit; 
+
+show databases;
+SELECT User, Host FROM mysql.user;
